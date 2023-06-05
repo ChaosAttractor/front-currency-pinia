@@ -10,14 +10,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in getterCurrency" :key="item.NumCode">
-            <td>{{ item.NumCode }}</td>
-            <td>{{ item.CharCode }}</td>
-            <td>{{ item.Nominal }}</td>
-            <td>{{ item.Name }}</td>
+          <tr v-for="item in apiStore.currency" :key="item.NumCode">
+            <td class="table-text-center">{{ item.NumCode }}</td>
+            <td class="table-text-center">{{ item.CharCode }}</td>
+            <td class="table-text-center">{{ item.Nominal }}</td>
+            <td class="table-text-center">{{ item.Name }}</td>
             <td class="flex flex-center gap-5px">
               {{ item.Value }}
-              <StonksIcon :value="item.Value" :previous="item.Previous" />
+              <Stonks :value="item.Value" :previous="item.Previous" />
             </td>
           </tr>
         </tbody>
@@ -27,15 +27,27 @@
 </template>
 
 <script>
-console.log(process.env.VUE_APP_API_URL);
+import { useApiStore } from "@/store/apiStore";
+import Stonks from "@/components/Stonks.vue";
+
 export default {
   name: "CurrencyView",
 
-  components: {},
+  components: { Stonks },
   data() {
     return {
       headers: ["Цифр. код", "Бук. код", "Единиц", "Валюта", "Курс"],
+      apiStore: useApiStore(),
     };
+  },
+  mounted() {
+    this.apiStore.getCurrency();
   },
 };
 </script>
+
+<style>
+.table-text-center {
+  text-align: center;
+}
+</style>
