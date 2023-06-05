@@ -16,7 +16,8 @@
             <td class="table-text-center">{{ item.Nominal }}</td>
             <td class="table-text-center">{{ item.Name }}</td>
             <td class="flex flex-center gap-5px">
-              {{ item.Value }}
+              <!-- todo сделать гетером в сторе -->
+              {{ item.Value.toFixed(2) }}
               <Stonks :value="item.Value" :previous="item.Previous" />
             </td>
           </tr>

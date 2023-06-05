@@ -1,12 +1,12 @@
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .flex-center {
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .gap-5px {
-    gap: 5px;
+  gap: 5px;
 }
