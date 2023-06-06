@@ -1,9 +1,8 @@
 <template>
   <div>
-    {{ currencyStore.getterCurrency }}
     <v-data-table
       :headers="headers"
-      :items="currencyStore.currency"
+      :items="currencyStore.currencyWithoutRUB"
       :items-per-page="-1"
       :calculate-widths="true"
     >

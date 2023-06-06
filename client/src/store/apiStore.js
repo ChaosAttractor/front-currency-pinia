@@ -6,9 +6,10 @@ export const useApiStore = defineStore('api', {
   actions: {
     async getCurrency() {
       const currencyStore = useCurrencyStore();
-      await axios
-        .get('/currency')
-        .then((res) => (currencyStore.currency = res.data));
+      await axios.get('/currency').then((res) => {
+        currencyStore.currency = res.data;
+        return currencyStore.addRubToCurrency();
+      });
     },
   },
 });

@@ -1,5 +1,5 @@
 import i18n from '@/i18n';
-
+// todo смена языка не работает при изменении без перезагрузки
 export const headers = [
   {
     text: i18n.messages[i18n.locale].headers.numcode,

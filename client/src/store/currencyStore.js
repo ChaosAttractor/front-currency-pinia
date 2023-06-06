@@ -4,10 +4,18 @@ export const useCurrencyStore = defineStore('currency', {
     currency: [],
   }),
   getters: {
-    // todo тригерить aciton при успешном получении api, сделать getter без RUB для таблицы
-    currencyWithRUB: (state) => {
+    currencyWithoutRUB: (state) => {
       const copy = state.currency.slice(0);
-      copy.push({
+      copy.pop();
+      return copy;
+    },
+    currencyName() {
+      return this.currency.map((el) => el.CharCode);
+    },
+  },
+  actions: {
+    addRubToCurrency() {
+      this.currency.push({
         id: 'R1111A',
         NumCode: 1,
         CharCode: 'RUB',
@@ -16,10 +24,7 @@ export const useCurrencyStore = defineStore('currency', {
         Value: 1,
         Previous: 1,
       });
-      return copy;
-    },
-    currencyName() {
-      return this.currencyWithRUB.map((el) => el.CharCode);
+      return this.currency;
     },
   },
 });
