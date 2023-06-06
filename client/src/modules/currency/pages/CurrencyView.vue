@@ -20,8 +20,8 @@
 <script>
 import { useApiStore } from '@/store/apiStore';
 import { useCurrencyStore } from '@/store/currencyStore';
-import Stonks from '@/components/Stonks.vue';
-import { headers } from '@/modules/table/entities/headers';
+import Stonks from '../components/Stonks.vue';
+import { headers } from '../entities/headers';
 export default {
   name: 'CurrencyView',
 

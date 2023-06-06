@@ -1,12 +1,12 @@
 <template>
   <div class="d-flex">
     <div class="d-flex align-center">
-      <v-btn text :to="{ name: 'currency' }">
+      <v-btn class="btn" text :to="{ name: 'currency' }">
         <span>{{ $t('navbar.currency') }}</span>
       </v-btn>
     </div>
     <div class="d-flex align-center mx-2">
-      <v-btn text :to="{ name: 'converter' }">
+      <v-btn class="btn" text :to="{ name: 'converter' }">
         <span>{{ $t('navbar.converter') }}</span>
       </v-btn>
     </div>
