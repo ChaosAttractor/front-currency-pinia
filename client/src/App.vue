@@ -3,7 +3,15 @@
 </template>
 
 <script>
+import { useApiStore } from "@/store/apiStore";
 export default {
-  name: "App",
+  data() {
+    return {
+      apiStore: useApiStore(),
+    };
+  },
+  mounted() {
+    this.apiStore.getCurrency();
+  },
 };
 </script>

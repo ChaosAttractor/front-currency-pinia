@@ -1,5 +1,61 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="container">
+    <div class="flex flex-center valute">
+      <v-text-field
+        label="Валюта 1"
+        v-model="converterStore.firstValute"
+      ></v-text-field>
+      <v-select
+        :items="currencyStore.currencyName"
+        v-model="converterStore.firstValuteAbbr"
+      ></v-select>
+    </div>
+    <div class="flex flex-center valute">
+      <v-text-field
+        label="Валюта 2"
+        hint="нельзя изменить"
+        readonly
+        v-model="converterStore.result"
+      ></v-text-field>
+      <v-select
+        :items="currencyStore.currencyName"
+        v-model="converterStore.secondValuteAbbr"
+      ></v-select>
+    </div>
   </div>
 </template>
+
+<script>
+import { useCurrencyStore } from "@/store/currencyStore";
+import { useConverterStore } from "@/store/converterStore";
+export default {
+  name: "ConverterView",
+  data() {
+    return {
+      currencyStore: useCurrencyStore(),
+      converterStore: useConverterStore(),
+    };
+  },
+};
+</script>
+
+<style scoped>
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 30px;
+}
+
+.valute {
+  width: 200px;
+}
+
+.v-input {
+  width: 150px;
+}
+
+.v-select {
+  width: 100px;
+}
+</style>

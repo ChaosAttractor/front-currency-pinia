@@ -1,34 +1,26 @@
 <template>
   <div>
-    <v-simple-table fixed-header height="900px">
-      <template v-slot:default>
-        <thead>
-          <tr>
-            <th v-for="header in headers" :key="header" class="text-center">
-              {{ header }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="item in apiStore.currency" :key="item.NumCode">
-            <td class="table-text-center">{{ item.NumCode }}</td>
-            <td class="table-text-center">{{ item.CharCode }}</td>
-            <td class="table-text-center">{{ item.Nominal }}</td>
-            <td class="table-text-center">{{ item.Name }}</td>
-            <td class="flex flex-center gap-5px">
-              <!-- todo сделать гетером в сторе -->
-              {{ item.Value.toFixed(2) }}
-              <Stonks :value="item.Value" :previous="item.Previous" />
-            </td>
-          </tr>
-        </tbody>
+    {{ currencyStore.getterCurrency }}
+    <v-data-table
+      :headers="headers"
+      :items="currencyStore.currency"
+      :items-per-page="-1"
+      :calculate-widths="true"
+    >
+      <!--      eslint-disable-next-line-->
+      <template v-slot:item.Value="{ item }">
+        <div class="flex flex-center gap-5px">
+          {{ item.Value.toFixed(2) }}
+          <Stonks :value="item.Value" :previous="item.Previous" />
+        </div>
       </template>
-    </v-simple-table>
+    </v-data-table>
   </div>
 </template>
 
 <script>
 import { useApiStore } from "@/store/apiStore";
+import { useCurrencyStore } from "@/store/currencyStore";
 import Stonks from "@/components/Stonks.vue";
 
 export default {
@@ -37,12 +29,16 @@ export default {
   components: { Stonks },
   data() {
     return {
-      headers: ["Цифр. код", "Бук. код", "Единиц", "Валюта", "Курс"],
+      headers: [
+        { text: "Цифр. код", value: "NumCode", align: "center" },
+        { text: "Бук. код", value: "CharCode", align: "center" },
+        { text: "Единиц", value: "Nominal", align: "center" },
+        { text: "Валюта", value: "Name", align: "center" },
+        { text: "Курс", value: "Value", align: "center" },
+      ],
       apiStore: useApiStore(),
+      currencyStore: useCurrencyStore(),
     };
-  },
-  mounted() {
-    this.apiStore.getCurrency();
   },
 };
 </script>
