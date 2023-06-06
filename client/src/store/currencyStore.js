@@ -1,18 +1,18 @@
-import { defineStore } from "pinia";
-export const useCurrencyStore = defineStore("currency", {
+import { defineStore } from 'pinia';
+export const useCurrencyStore = defineStore('currency', {
   state: () => ({
     currency: [],
   }),
   getters: {
-    // todo тригерить при успешном получении api
+    // todo тригерить aciton при успешном получении api, сделать getter без RUB для таблицы
     currencyWithRUB: (state) => {
       const copy = state.currency.slice(0);
       copy.push({
-        id: "R1111A",
+        id: 'R1111A',
         NumCode: 1,
-        CharCode: "RUB",
+        CharCode: 'RUB',
         Nominal: 1,
-        Name: "Российский рубль",
+        Name: 'Российский рубль',
         Value: 1,
         Previous: 1,
       });

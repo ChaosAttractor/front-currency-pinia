@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "currency": "Курсы валют",
+    "converter": "Конвертация валют"
+  },
+  "headers": {
+    "numcode": "Цифр. код",
+    "charcode": "Бук. код",
+    "nominal": "Единиц",
+    "name": "Валюта",
+    "value": "Курс"
+  },
+  "exchange": {
+    "valute": "Валюта {num}",
+    "hint": "Нельзя изменить"
+  }
+}

@@ -19,23 +19,17 @@
 </template>
 
 <script>
-import { useApiStore } from "@/store/apiStore";
-import { useCurrencyStore } from "@/store/currencyStore";
-import Stonks from "@/components/Stonks.vue";
-
+import { useApiStore } from '@/store/apiStore';
+import { useCurrencyStore } from '@/store/currencyStore';
+import Stonks from '@/components/Stonks.vue';
+import { headers } from '@/modules/table/entities/headers';
 export default {
-  name: "CurrencyView",
+  name: 'CurrencyView',
 
   components: { Stonks },
   data() {
     return {
-      headers: [
-        { text: "Цифр. код", value: "NumCode", align: "center" },
-        { text: "Бук. код", value: "CharCode", align: "center" },
-        { text: "Единиц", value: "Nominal", align: "center" },
-        { text: "Валюта", value: "Name", align: "center" },
-        { text: "Курс", value: "Value", align: "center" },
-      ],
+      headers: headers,
       apiStore: useApiStore(),
       currencyStore: useCurrencyStore(),
     };
@@ -43,7 +37,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .table-text-center {
   text-align: center;
 }

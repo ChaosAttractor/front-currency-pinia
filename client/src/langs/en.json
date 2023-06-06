@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "currency": "Exchange rates",
+    "converter": "Currency conversion"
+  },
+  "headers": {
+    "numcode": "Num. code",
+    "charcode": "Char. code",
+    "nominal": "Nominal",
+    "name": "Valute",
+    "value": "Value"
+  },
+  "exchange": {
+    "valute": "Valute {num}",
+    "hint": "Uneditable"
+  }
+}

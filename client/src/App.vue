@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { useApiStore } from "@/store/apiStore";
+import { useApiStore } from '@/store/apiStore';
 export default {
   data() {
     return {

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="flex flex-center valute">
       <v-text-field
-        label="Валюта 1"
+        :label="$t('exchange.valute', { num: 1 })"
         v-model="converterStore.firstValute"
       ></v-text-field>
       <v-select
@@ -12,8 +12,8 @@
     </div>
     <div class="flex flex-center valute">
       <v-text-field
-        label="Валюта 2"
-        hint="нельзя изменить"
+        :label="$t('exchange.valute', { num: 2 })"
+        :hint="$t('exchange.hint')"
         readonly
         v-model="converterStore.result"
       ></v-text-field>
@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import { useCurrencyStore } from "@/store/currencyStore";
-import { useConverterStore } from "@/store/converterStore";
+import { useCurrencyStore } from '@/store/currencyStore';
+import { useConverterStore } from '@/store/converterStore';
 export default {
-  name: "ConverterView",
+  name: 'ConverterView',
   data() {
     return {
       currencyStore: useCurrencyStore(),

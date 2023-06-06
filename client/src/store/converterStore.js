@@ -1,11 +1,11 @@
-import { defineStore } from "pinia";
-import { useCurrencyStore } from "@/store/currencyStore";
+import { defineStore } from 'pinia';
+import { useCurrencyStore } from '@/store/currencyStore';
 
-export const useConverterStore = defineStore("converter", {
+export const useConverterStore = defineStore('converter', {
   state: () => ({
     firstValute: 1,
-    firstValuteAbbr: "RUB",
-    secondValuteAbbr: "USD",
+    firstValuteAbbr: 'RUB',
+    secondValuteAbbr: 'USD',
   }),
   getters: {
     firstValuteConverted: (state) => {
