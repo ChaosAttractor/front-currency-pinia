@@ -22,16 +22,21 @@ import { useApiStore } from '@/store/apiStore';
 import { useCurrencyStore } from '@/store/currencyStore';
 import Stonks from '../components/Stonks.vue';
 import { headers } from '../entities/headers';
+
 export default {
   name: 'CurrencyView',
 
   components: { Stonks },
   data() {
     return {
-      headers: headers,
       apiStore: useApiStore(),
       currencyStore: useCurrencyStore(),
     };
+  },
+  computed: {
+    headers() {
+      return headers(this.$i18n.locale);
+    },
   },
 };
 </script>
