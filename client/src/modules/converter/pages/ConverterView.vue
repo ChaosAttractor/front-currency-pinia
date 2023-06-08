@@ -66,5 +66,14 @@ export default {
     justify-content: flex-start;
     gap: 10px;
   }
+
+  .v-input {
+    font-size: 20px;
+  }
+
+  .v-select {
+    width: 100px;
+    font-size: 20px;
+  }
 }
 </style>

@@ -25,6 +25,7 @@ export default {
       this.$i18n.locale === 'en'
         ? (this.$i18n.locale = 'ru')
         : (this.$i18n.locale = 'en');
+      this.$vuetify.lang.current = this.$i18n.locale;
       localStorage.setItem('lang', this.$i18n.locale);
     },
   },
@@ -49,6 +50,7 @@ export default {
 @media (max-width: 600px) {
   .v-btn.v-btn--has-bg {
     background: #428fda;
+    color: white;
   }
 }
 </style>
