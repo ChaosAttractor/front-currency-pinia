@@ -1,7 +1,8 @@
 <template>
   <v-btn class="btn" @click="switchLang">
-    <span class="d-flex flex-center gap-5px text-lg"
-      ><svg
+    <span class="d-flex flex-center gap-5px text-lg">
+      <!--      todo -->
+      <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
         class="icon"
@@ -18,10 +19,9 @@
 <script>
 export default {
   methods: {
+    // todo $i18n перейти на $vuetify.lang
     switchLang() {
-      this.$i18n.locale === 'en'
-        ? (this.$i18n.locale = 'ru')
-        : (this.$i18n.locale = 'en');
+      this.$i18n.locale = this.$i18n.locale === 'en' ? 'ru' : 'en';
       this.$vuetify.lang.current = this.$i18n.locale;
       localStorage.setItem('lang', this.$i18n.locale);
     },
@@ -29,6 +29,8 @@ export default {
 };
 </script>
 
+<!--// todo вынести в стили-->
+<!--// todo icon убрать в атрибуты-->
 <style scoped>
 .v-btn.v-btn--has-bg {
   background: #428fda;

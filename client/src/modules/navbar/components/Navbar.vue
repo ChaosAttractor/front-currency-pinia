@@ -19,6 +19,7 @@
   </div>
 </template>
 
+<!--// todo components-->
 <script>
 import { links } from '../entities/links';
 import SwitchLang from './SwitchLang.vue';

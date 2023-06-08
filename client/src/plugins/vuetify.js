@@ -4,6 +4,7 @@ import ru from 'vuetify/lib/locale/ru';
 
 Vue.use(Vuetify);
 
+// todo i18n
 export default new Vuetify({
   lang: {
     locales: { ru },

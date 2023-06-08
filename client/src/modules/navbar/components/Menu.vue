@@ -3,6 +3,7 @@
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
         <v-btn color="primary" dark v-bind="attrs" v-on="on">
+          <!--          // todo components -> icons -> componentIcon-->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon"

@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import axios from '../axios';
 import { useCurrencyStore } from '@/store/currencyStore';
 
+// todo index.store
 export const useApiStore = defineStore('api', {
   actions: {
     async getCurrency() {

@@ -1,20 +1,19 @@
 <template>
-  <div>
-    <v-data-table
-      :headers="headers"
-      :items="currencyStore.currencyWithoutRUB"
-      :items-per-page="-1"
-      :calculate-widths="true"
-    >
-      <!--      eslint-disable-next-line-->
-      <template v-slot:item.Value="{ item }">
-        <div class="d-flex flex-center gap-5px">
-          {{ item.Value.toFixed(2) }}
-          <Stonks :value="item.Value" :previous="item.Previous" />
-        </div>
-      </template>
-    </v-data-table>
-  </div>
+  <v-data-table
+    :headers="headers"
+    :items="currencyStore.currencyWithoutRUB"
+    :items-per-page="-1"
+    :calculate-widths="true"
+  >
+    <!--      todo v-slot:item.Value  заменить на новый ситаксис-->
+    <!--      eslint-disable-next-line-->
+    <template v-slot:item.Value="{ item }">
+      <div class="d-flex flex-center gap-5px">
+        {{ item.Value.toFixed(2) }}
+        <Stonks :value="item.Value" :previous="item.Previous" />
+      </div>
+    </template>
+  </v-data-table>
 </template>
 
 <script>
