@@ -8,7 +8,7 @@
     >
       <!--      eslint-disable-next-line-->
       <template v-slot:item.Value="{ item }">
-        <div class="flex flex-center gap-5px">
+        <div class="d-flex flex-center gap-5px">
           {{ item.Value.toFixed(2) }}
           <Stonks :value="item.Value" :previous="item.Previous" />
         </div>

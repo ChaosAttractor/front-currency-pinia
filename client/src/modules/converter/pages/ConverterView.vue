@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="flex flex-center valute">
+    <div class="d-flex flex-center valute">
       <v-text-field
         :label="$t('exchange.valute', { num: 1 })"
         v-model="converterStore.firstValute"
@@ -10,7 +10,7 @@
         v-model="converterStore.firstValuteAbbr"
       ></v-select>
     </div>
-    <div class="flex flex-center valute">
+    <div class="d-flex flex-center valute">
       <v-text-field
         :label="$t('exchange.valute', { num: 2 })"
         :hint="$t('exchange.hint')"
@@ -59,7 +59,7 @@ export default {
   width: 100px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .container {
     flex-direction: column;
     align-items: center;

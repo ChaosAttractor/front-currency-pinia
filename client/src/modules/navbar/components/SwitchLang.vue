@@ -1,6 +1,6 @@
 <template>
   <v-btn class="btn" @click="switchLang">
-    <span class="flex flex-center gap-5px text-lg"
+    <span class="d-flex flex-center gap-5px text-lg"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512"
@@ -17,9 +17,6 @@
 
 <script>
 export default {
-  props: {
-    type: String,
-  },
   methods: {
     switchLang() {
       this.$i18n.locale === 'en'
