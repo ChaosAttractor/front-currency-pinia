@@ -7,6 +7,20 @@
   justify-content: center;
 }
 
+.flex-between {
+  width: 100%;
+  justify-content: space-between;
+}
+
 .gap-5px {
   gap: 5px;
+}
+
+.gap-10px {
+  gap: 10px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
 }

@@ -58,4 +58,13 @@ export default {
 .v-select {
   width: 100px;
 }
+
+@media (max-width: 500px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}
 </style>

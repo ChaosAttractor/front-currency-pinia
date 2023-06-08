@@ -17,6 +17,9 @@
 
 <script>
 export default {
+  props: {
+    type: String,
+  },
   methods: {
     switchLang() {
       this.$i18n.locale === 'en'
@@ -29,7 +32,7 @@ export default {
 </script>
 
 <style scoped>
-.theme--dark.v-btn.v-btn--has-bg {
+.v-btn.v-btn--has-bg {
   background: #428fda;
 }
 
@@ -41,5 +44,11 @@ export default {
 
 .text-lg {
   font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .v-btn.v-btn--has-bg {
+    background: #428fda;
+  }
 }
 </style>

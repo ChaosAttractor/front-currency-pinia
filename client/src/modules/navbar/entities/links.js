@@ -4,11 +4,11 @@ export const links = (locale) => {
   return [
     {
       title: i18n.messages[locale].navbar.currency,
-      link: '/',
+      to: '/',
     },
     {
       title: i18n.messages[locale].navbar.converter,
-      link: '/converter',
+      to: '/converter',
     },
   ];
 };
