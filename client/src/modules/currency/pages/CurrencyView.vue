@@ -5,8 +5,6 @@
     :items-per-page="-1"
     :calculate-widths="true"
   >
-    <!--      todo v-slot:item.Value  заменить на новый ситаксис-->
-    <!--      eslint-disable-next-line-->
     <template v-slot:item.Value="{ item }">
       <div class="d-flex flex-center gap-5px">
         {{ item.Value.toFixed(2) }}

@@ -3,11 +3,11 @@ import { useCurrencyStore } from '@/store/currencyStore';
 
 // todo
 export const useConverterStore = defineStore('converter', {
-  state: {
+  state: () => ({
     firstValute: 1,
     firstValuteAbbr: 'RUB',
     secondValuteAbbr: 'USD',
-  },
+  }),
   getters: {
     firstValuteConverted: (state) => {
       const currencyStore = useCurrencyStore();

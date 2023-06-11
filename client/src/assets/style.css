@@ -1,3 +1,10 @@
+:root {
+  --green: limegreen;
+  --red: red;
+  --white: white;
+  --black: black;
+}
+
 .flex-center {
   align-items: center;
   justify-content: center;
@@ -14,9 +21,4 @@
 
 .gap-10px {
   gap: 10px;
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
 }

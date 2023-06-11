@@ -3,17 +3,7 @@
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
         <v-btn color="primary" dark v-bind="attrs" v-on="on">
-          <!--          // todo components -> icons -> componentIcon-->
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              fill="currentColor"
-              d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"
-            />
-          </svg>
+          <MenuIcon width="24" height="24" color="white" />
         </v-btn>
       </template>
       <v-list>
@@ -37,9 +27,10 @@
 <script>
 import { RouterLink } from 'vue-router';
 import SwitchLang from '@/modules/navbar/components/SwitchLang.vue';
+import MenuIcon from '@/components/icons/MenuIcon.vue';
 
 export default {
-  components: { SwitchLang, RouterLink },
+  components: { SwitchLang, RouterLink, MenuIcon },
   props: {
     links: {
       title: String,
