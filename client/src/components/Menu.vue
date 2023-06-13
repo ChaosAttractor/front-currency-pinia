@@ -26,7 +26,7 @@
 
 <script>
 import { RouterLink } from 'vue-router';
-import SwitchLang from '@/modules/navbar/components/SwitchLang.vue';
+import SwitchLang from '@/components/SwitchLang.vue';
 import MenuIcon from '@/components/icons/MenuIcon.vue';
 
 export default {

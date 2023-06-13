@@ -27,8 +27,6 @@ export const useCurrencyStore = defineStore('currency', {
         Value: 1,
         Previous: 1,
       });
-      // todo для чего?
-      return this.currency;
     },
   },
 });

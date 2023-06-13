@@ -1,25 +1,25 @@
 <template>
   <div class="container">
-    <div class="d-flex flex-center valute">
+    <div class="d-flex flex-center money">
       <v-text-field
-        :label="$t('exchange.valute', { num: 1 })"
-        v-model="converterStore.firstValute"
+        :label="$t('exchange.money', { num: 1 })"
+        v-model="stateConverterStore.firstValute"
       ></v-text-field>
       <v-select
         :items="currencyStore.currencyName"
-        v-model="converterStore.firstValuteAbbr"
+        v-model="stateConverterStore.firstValuteAbbr"
       ></v-select>
     </div>
-    <div class="d-flex flex-center valute">
+    <div class="d-flex flex-center money">
       <v-text-field
-        :label="$t('exchange.valute', { num: 2 })"
+        :label="$t('exchange.money', { num: 2 })"
         :hint="$t('exchange.hint')"
         readonly
-        v-model="converterStore.result"
+        v-model="gettterConverter.result"
       ></v-text-field>
       <v-select
         :items="currencyStore.currencyName"
-        v-model="converterStore.secondValuteAbbr"
+        v-model="stateConverterStore.secondValuteAbbr"
       ></v-select>
     </div>
   </div>
@@ -27,13 +27,15 @@
 
 <script>
 import { useCurrencyStore } from '@/store/currencyStore';
-import { useConverterStore } from '@/store/converterStore';
+import { useStateConverterStore } from '@/store/converterStore/stateConverter';
+import { useGetterConverterStore } from '@/store/converterStore/getterConverter';
 export default {
   name: 'ConverterView',
   data() {
     return {
+      stateConverterStore: useStateConverterStore(),
       currencyStore: useCurrencyStore(),
-      converterStore: useConverterStore(),
+      gettterConverter: useGetterConverterStore(),
     };
   },
 };
@@ -47,16 +49,8 @@ export default {
   gap: 30px;
 }
 
-.valute {
+.money {
   width: 200px;
-}
-
-.v-input {
-  width: 150px;
-}
-
-.v-select {
-  width: 100px;
 }
 
 @media (max-width: 600px) {
@@ -65,15 +59,6 @@ export default {
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
-  }
-
-  .v-input {
-    font-size: 20px;
-  }
-
-  .v-select {
-    width: 100px;
-    font-size: 20px;
   }
 }
 </style>

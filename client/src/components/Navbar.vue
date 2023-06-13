@@ -21,9 +21,9 @@
 
 <!--// todo components-->
 <script>
-import { links } from '../entities/links';
+import { links } from '../modules/navbar/entities/links';
 import SwitchLang from './SwitchLang.vue';
-import Menu from '@/modules/navbar/components/Menu.vue';
+import Menu from '@/components/Menu.vue';
 export default {
   components: { Menu, SwitchLang },
   computed: {
@@ -42,10 +42,6 @@ export default {
 }
 
 @media (max-width: 600px) {
-  .menu {
-    display: block;
-  }
-
   .nav {
     display: none;
   }

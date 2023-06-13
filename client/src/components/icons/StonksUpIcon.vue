@@ -17,8 +17,8 @@
 <script>
 export default {
   props: {
-    width: Number,
-    height: Number,
+    width: String,
+    height: String,
     color: {
       type: String,
       default: 'white',

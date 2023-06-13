@@ -11,7 +11,7 @@
     "value": "Value"
   },
   "exchange": {
-    "valute": "Valute {num}",
+    "money": "Valute {num}",
     "hint": "Uneditable"
   }
 }

@@ -8,8 +8,7 @@
     />
     <StonksDownIcon v-else width="24" height="24" color="red" />
 
-    <!--     todo computed-->
-    <sub>{{ diff > 0.0 ? `+${diff.toFixed(1)}` : diff.toFixed(1) }}</sub>
+    <sub>{{ diffWithSymbol }}</sub>
   </div>
 </template>
 
@@ -25,6 +24,11 @@ export default {
   computed: {
     diff() {
       return this.value - this.previous;
+    },
+    diffWithSymbol() {
+      return this.diff > 0.0
+        ? `+${this.diff.toFixed(1)}`
+        : this.diff.toFixed(1);
     },
   },
   components: { StonksUpIcon, StonksDownIcon },

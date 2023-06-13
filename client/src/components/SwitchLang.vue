@@ -23,21 +23,8 @@ export default {
 };
 </script>
 
-<!--// todo вынести в стили и переменные-->
-<!--// todo icon убрать в атрибуты-->
 <style scoped>
 .v-btn.v-btn--has-bg {
-  background: #428fda;
-}
-
-.text-lg {
-  font-size: 16px;
-}
-
-@media (max-width: 600px) {
-  .v-btn.v-btn--has-bg {
-    background: #428fda;
-    color: white;
-  }
+  background: var(--main-blue);
 }
 </style>
