@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia';
-import axios from '../axios';
+import axios from '../../axios';
 import { useCurrencyStore } from '@/store/currencyStore';
 
 // todo index.store
-export const useApiStore = defineStore('api', {
+export const useActionsApiStore = defineStore('actionsApi', {
   actions: {
     async getCurrency() {
       const currencyStore = useCurrencyStore();
