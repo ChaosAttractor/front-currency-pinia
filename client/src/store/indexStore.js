@@ -12,6 +12,9 @@ import { useGetterConverterStore } from '@/store/converter/getterConverter';
   но со стороны написания, не очень приятно делать мешанину тут
  */
 
+// todo сделать следующие
+// todo список валют в глобальном store
+// todo разделить каждый на свои store
 export const useIndexStore = defineStore('store', {
   state: () => ({
     firstValue: useStateConverterStore().firstValue,

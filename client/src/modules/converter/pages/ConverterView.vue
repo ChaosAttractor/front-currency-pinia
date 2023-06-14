@@ -41,6 +41,8 @@ export default {
 };
 </script>
 
+<!--// todo https://ru.bem.info/methodology/quick-start/-->
+<!--// todo sass-->
 <style scoped>
 .container {
   display: flex;
