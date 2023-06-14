@@ -2,8 +2,8 @@ import { defineStore } from 'pinia';
 
 export const useStateConverterStore = defineStore('stateConverter', {
   state: () => ({
-    firstValute: 1,
-    firstValuteAbbr: 'RUB',
-    secondValuteAbbr: 'USD',
+    firstValue: 1,
+    firstValueAbbr: 'RUB',
+    secondValueAbbr: 'USD',
   }),
 });

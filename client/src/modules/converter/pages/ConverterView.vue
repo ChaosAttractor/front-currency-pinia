@@ -3,11 +3,13 @@
     <div class="d-flex flex-center money">
       <v-text-field
         :label="$t('exchange.money', { num: 1 })"
-        v-model="stateConverterStore.firstValute"
+        v-model="store.firstValue"
+        @input="store.changeFirstValue()"
       ></v-text-field>
       <v-select
-        :items="currencyStore.currencyName"
-        v-model="stateConverterStore.firstValuteAbbr"
+        :items="store.currencyName"
+        v-model="store.firstValueAbbr"
+        @input="store.changeFirstValueAbbr()"
       ></v-select>
     </div>
     <div class="d-flex flex-center money">
@@ -15,27 +17,25 @@
         :label="$t('exchange.money', { num: 2 })"
         :hint="$t('exchange.hint')"
         readonly
-        v-model="gettterConverter.result"
+        v-model="store.result"
       ></v-text-field>
       <v-select
-        :items="currencyStore.currencyName"
-        v-model="stateConverterStore.secondValuteAbbr"
+        :items="store.currencyName"
+        v-model="store.secondValueAbbr"
+        @input="store.changeSecondValueAbbr()"
       ></v-select>
     </div>
   </div>
 </template>
 
 <script>
-import { useCurrencyStore } from '@/store/currencyStore';
-import { useStateConverterStore } from '@/store/converterStore/stateConverter';
-import { useGetterConverterStore } from '@/store/converterStore/getterConverter';
+import { useIndexStore } from '@/store/indexStore';
+
 export default {
   name: 'ConverterView',
   data() {
     return {
-      stateConverterStore: useStateConverterStore(),
-      currencyStore: useCurrencyStore(),
-      gettterConverter: useGetterConverterStore(),
+      store: useIndexStore(),
     };
   },
 };

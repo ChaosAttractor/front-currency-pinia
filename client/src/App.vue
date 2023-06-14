@@ -3,16 +3,16 @@
 </template>
 
 <script>
-import { useActionsApiStore } from '@/store/apiStore/actionsApi';
+import { useIndexStore } from '@/store/indexStore';
 
 export default {
   data() {
     return {
-      actionsApi: useActionsApiStore(),
+      store: useIndexStore(),
     };
   },
   mounted() {
-    this.actionsApi.getCurrency();
+    this.store.getCurrency();
   },
 };
 </script>
