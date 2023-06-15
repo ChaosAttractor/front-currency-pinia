@@ -48,6 +48,7 @@ export default {
     &__center {
       display: flex;
       justify-content: center;
+      align-items: center;
     }
     &__gap {
       gap: 5px;
