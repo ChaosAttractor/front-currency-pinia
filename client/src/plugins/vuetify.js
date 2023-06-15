@@ -4,8 +4,14 @@ import ru from 'vuetify/lib/locale/ru';
 
 Vue.use(Vuetify);
 
-// todo i18n
 export default new Vuetify({
+  theme: {
+    themes: {
+      light: {
+        'main-blue': '#428fda',
+      },
+    },
+  },
   lang: {
     locales: { ru },
     current: localStorage.getItem('lang') || 'ru',

@@ -1,6 +1,5 @@
 import { defineStore } from 'pinia';
 import { useActionsCurrencyStore } from '@/store/currency/actionsCurrency';
-import { useStateCurrencyStore } from '@/store/currency/stateCurrency';
 import { useGetterCurrencyStore } from '@/store/currency/getterCurrency';
 import { useStateConverterStore } from '@/store/converter/stateConverter';
 import { useGetterConverterStore } from '@/store/converter/getterConverter';
@@ -13,19 +12,15 @@ import { useGetterConverterStore } from '@/store/converter/getterConverter';
  */
 
 // todo сделать следующие
-// todo список валют в глобальном store
 // todo разделить каждый на свои store
 export const useIndexStore = defineStore('store', {
   state: () => ({
+    currency: [],
     firstValue: useStateConverterStore().firstValue,
     firstValueAbbr: useStateConverterStore().firstValueAbbr,
     secondValueAbbr: useStateConverterStore().secondValueAbbr,
   }),
   getters: {
-    currency() {
-      const stateCurrency = useStateCurrencyStore();
-      return stateCurrency.$state.currency;
-    },
     currencyWithoutRUB() {
       const getterCurrency = useGetterCurrencyStore();
       return getterCurrency.currencyWithoutRUB;

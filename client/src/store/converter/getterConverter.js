@@ -1,16 +1,16 @@
 import { defineStore } from 'pinia';
 import { useStateConverterStore } from '@/store/converter/stateConverter';
 import { useActionsConverterStore } from '@/store/converter/actionsConverter';
-import { useStateCurrencyStore } from '@/store/currency/stateCurrency';
+import { useIndexStore } from '@/store/indexStore';
 
 export const useGetterConverterStore = defineStore('getterConverter', {
   getters: {
     firstValueConverted: () => {
       const stateConverter = useStateConverterStore();
-      const stateCurrency = useStateCurrencyStore();
+      const store = useIndexStore();
       const actionsConverter = useActionsConverterStore();
 
-      if (stateCurrency.$state.currency.length > 0) {
+      if (store.$state.currency.length > 0) {
         let res = actionsConverter.findValue(
           stateConverter.$state.firstValueAbbr,
         );
@@ -19,9 +19,9 @@ export const useGetterConverterStore = defineStore('getterConverter', {
     },
     secondValue: () => {
       const stateConverter = useStateConverterStore();
-      const stateCurrency = useStateCurrencyStore();
+      const store = useIndexStore();
       const actionsConverter = useActionsConverterStore();
-      if (stateCurrency.currency.length > 0) {
+      if (store.currency.length > 0) {
         let res = actionsConverter.findValue(
           stateConverter.$state.secondValueAbbr,
         );
@@ -29,10 +29,10 @@ export const useGetterConverterStore = defineStore('getterConverter', {
       }
     },
     result() {
-      const stateCurrency = useStateCurrencyStore();
+      const store = useIndexStore();
       const getterConverter = useGetterConverterStore();
 
-      if (stateCurrency.currency.length > 0) {
+      if (store.currency.length > 0) {
         return (
           getterConverter.firstValueConverted / getterConverter.secondValue
         ).toFixed(3);

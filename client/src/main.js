@@ -3,7 +3,7 @@ import App from './App.vue';
 import router from './router';
 import vuetify from './plugins/vuetify';
 import { pinia } from './plugins/pinia';
-import './assets/style.css';
+import './assets/style.scss';
 import i18n from './plugins/i18n';
 
 Vue.config.productionTip = false;

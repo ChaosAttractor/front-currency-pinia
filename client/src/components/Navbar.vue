@@ -1,26 +1,20 @@
 <template>
-  <div class="d-flex flex-between">
+  <div class="nav">
     <Menu :links="links" />
 
-    <div class="nav">
-      <div class="d-flex gap-10px">
-        <v-btn
-          class="btn"
-          text
-          v-for="link in links"
-          :key="link.title"
-          :to="link.to"
-        >
+    <div class="nav_navbar nav_navbar--between">
+      <div class="nav_navbar--flex nav_navbar--gap">
+        <v-btn text v-for="link in links" :key="link.title" :to="link.to">
           <span>{{ link.title }}</span>
         </v-btn>
       </div>
-      <SwitchLang class="ml-5" />
+      <SwitchLang />
     </div>
   </div>
 </template>
 
 <script>
-import { links } from '../modules/navbar/entities/links';
+import { links } from '@/entities/links';
 import SwitchLang from './SwitchLang.vue';
 import Menu from '@/components/Menu.vue';
 export default {
@@ -33,16 +27,25 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .nav {
+  display: flex;
   width: 100%;
-  display: inline-flex;
-  justify-content: space-between;
-}
-
-@media (max-width: 600px) {
-  .nav {
-    display: none;
+  &_navbar {
+    display: flex;
+    width: 100%;
+    @media (max-width: 600px) {
+      display: none;
+    }
+    &--between {
+      justify-content: space-between;
+    }
+    &--flex {
+      display: flex;
+    }
+    &--gap {
+      gap: 10px;
+    }
   }
 }
 </style>

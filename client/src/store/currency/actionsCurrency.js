@@ -1,12 +1,12 @@
 import { defineStore } from 'pinia';
-import { useStateCurrencyStore } from '@/store/currency/stateCurrency';
 import axios from '@/axios';
+import { useIndexStore } from '@/store/indexStore';
 
 export const useActionsCurrencyStore = defineStore('actionsCurrency', {
   actions: {
     addRubToCurrency() {
-      const stateCurrency = useStateCurrencyStore();
-      stateCurrency.$state.currency.push({
+      const store = useIndexStore();
+      store.$state.currency.push({
         id: 'R1111A',
         NumCode: 1,
         CharCode: 'RUB',
@@ -17,9 +17,9 @@ export const useActionsCurrencyStore = defineStore('actionsCurrency', {
       });
     },
     async getCurrency() {
-      const stateCurrency = useStateCurrencyStore();
+      const store = useIndexStore();
       await axios.get('/currency').then((res) => {
-        stateCurrency.$state.currency = res.data;
+        store.$state.currency = res.data;
         return this.addRubToCurrency();
       });
     },

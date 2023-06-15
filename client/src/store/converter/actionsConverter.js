@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia';
-import { useStateCurrencyStore } from '@/store/currency/stateCurrency';
+import { useIndexStore } from '@/store/indexStore';
 
 export const useActionsConverterStore = defineStore('actionsConverter', {
   actions: {
     findValue(abbr) {
-      const stateCurrency = useStateCurrencyStore();
-      return stateCurrency.$state.currency.find((el) => el.CharCode === abbr);
+      const store = useIndexStore();
+      return store.$state.currency.find((el) => el.CharCode === abbr);
     },
   },
 });

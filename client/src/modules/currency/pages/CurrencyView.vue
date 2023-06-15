@@ -5,9 +5,10 @@
       :items="store.currencyWithoutRUB"
       :items-per-page="-1"
       :calculate-widths="true"
+      class="table"
     >
       <template v-slot:item.Value="{ item }">
-        <div class="d-flex flex-center gap-5px">
+        <div class="table__col table__col__center table__col__gap">
           {{ item.Value.toFixed(2) }}
           <Stonks :value="item.Value" :previous="item.Previous" />
         </div>
@@ -38,8 +39,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .table-text-center {
   text-align: center;
+}
+.table {
+  &__col {
+    &__center {
+      display: flex;
+      justify-content: center;
+    }
+    &__gap {
+      gap: 5px;
+    }
+  }
 }
 </style>

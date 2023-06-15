@@ -5,7 +5,7 @@
     :style="{
       width: width + 'px',
       height: height + 'px',
-      fill: 'var(--' + color + ')',
+      fill: color,
     }"
   >
     <path

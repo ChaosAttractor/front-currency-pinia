@@ -1,17 +1,17 @@
 import { defineStore } from 'pinia';
-import { useStateCurrencyStore } from '@/store/currency/stateCurrency';
+import { useIndexStore } from '@/store/indexStore';
 
 export const useGetterCurrencyStore = defineStore('getterCurrency', {
   getters: {
     currencyWithoutRUB() {
-      const stateCurrency = useStateCurrencyStore();
-      const copy = stateCurrency.$state.currency.slice(0);
+      const store = useIndexStore();
+      const copy = store.$state.currency.slice(0);
       copy.pop();
       return copy;
     },
     currencyName() {
-      const stateCurrency = useStateCurrencyStore();
-      return stateCurrency.$state.currency.map((el) => el.CharCode);
+      const store = useIndexStore();
+      return store.$state.currency.map((el) => el.CharCode);
     },
   },
 });

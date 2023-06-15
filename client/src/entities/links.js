@@ -1,6 +1,5 @@
 import i18n from '@/plugins/i18n';
 
-// todo вынести на корень
 export const links = (locale) => {
   return [
     {

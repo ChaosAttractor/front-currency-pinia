@@ -8,7 +8,7 @@
       </template>
       <v-list>
         <v-list-item v-for="link in links" :key="link.title">
-          <v-list-item-title class="link">
+          <v-list-item-title class="menu__link">
             <router-link :to="link.to">
               {{ link.title }}
             </router-link>
@@ -40,19 +40,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .menu {
   display: none;
-}
-
-.link > a {
-  color: black;
-  text-decoration: none;
-}
-
-@media (max-width: 600px) {
-  .menu {
+  @media (max-width: 600px) {
     display: block;
+  }
+  &__link {
+    a {
+      color: black;
+      text-decoration: none;
+    }
   }
 }
 </style>

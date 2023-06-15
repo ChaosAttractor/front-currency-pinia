@@ -4,7 +4,7 @@
       v-if="value > previous"
       width="24"
       height="24"
-      color="green"
+      color="limegreen"
     />
     <StonksDownIcon v-else width="24" height="24" color="red" />
 
