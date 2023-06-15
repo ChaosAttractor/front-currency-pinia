@@ -1,6 +1,6 @@
 <template>
   <v-btn class="btn" color="main-blue" @click="switchLang">
-    <span class="btn--text-lg btn--flex btn--gap">
+    <span class="btn_text-lg btn_flex btn_gap">
       <WorldIcon width="24" height="24" color="white" />
       {{ $i18n.locale }}
     </span>
@@ -25,13 +25,13 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/_variables';
 .btn {
-  &--gap {
+  &_gap {
     gap: 5px;
   }
-  &--text-lg {
+  &_text-lg {
     font-size: $xm;
   }
-  &--flex {
+  &_flex {
     display: flex;
     align-items: center;
   }

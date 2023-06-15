@@ -2,8 +2,8 @@
   <div class="nav">
     <Menu :links="links" />
 
-    <div class="nav_navbar nav_navbar--between">
-      <div class="nav_navbar--flex nav_navbar--gap">
+    <div class="nav__navbar nav__navbar_between">
+      <div class="nav__navbar_flex nav__navbar_gap">
         <v-btn text v-for="link in links" :key="link.title" :to="link.to">
           <span>{{ link.title }}</span>
         </v-btn>
@@ -31,19 +31,19 @@ export default {
 .nav {
   display: flex;
   width: 100%;
-  &_navbar {
+  &__navbar {
     display: flex;
     width: 100%;
     @media (max-width: 600px) {
       display: none;
     }
-    &--between {
+    &_between {
       justify-content: space-between;
     }
-    &--flex {
+    &_flex {
       display: flex;
     }
-    &--gap {
+    &_gap {
       gap: 10px;
     }
   }

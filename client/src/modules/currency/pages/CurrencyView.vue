@@ -8,7 +8,7 @@
       class="table"
     >
       <template v-slot:item.Value="{ item }">
-        <div class="table__col table__col__center table__col__gap">
+        <div class="table__col table__col_center table__col_gap">
           {{ item.Value.toFixed(2) }}
           <Stonks :value="item.Value" :previous="item.Previous" />
         </div>
@@ -45,12 +45,12 @@ export default {
 }
 .table {
   &__col {
-    &__center {
+    &_center {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    &__gap {
+    &_gap {
       gap: 5px;
     }
   }

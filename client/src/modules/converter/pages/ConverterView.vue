@@ -1,6 +1,6 @@
 <template>
-  <div class="container container--mt-30 container--gap">
-    <div class="container__money container__money__flex">
+  <div class="container container_mt container_gap">
+    <div class="container__money container__money_flex">
       <v-text-field
         :label="$t('exchange.money', { num: 1 })"
         v-model="store.firstValue"
@@ -12,7 +12,7 @@
         @input="store.changeFirstValueAbbr()"
       ></v-select>
     </div>
-    <div class="container__money d-flex">
+    <div class="container__money container__money_flex">
       <v-text-field
         :label="$t('exchange.money', { num: 2 })"
         :hint="$t('exchange.hint')"
@@ -43,7 +43,8 @@ export default {
 
 <!--переписал на БЭМ-->
 <!--элемент отделяется __ -->
-<!--модификатор отделяется -- -->
+<!--модификатор отделяется _ -->
+<!--vuetify отделяет модификатор с помощью -- -->
 
 <style lang="scss" scoped>
 .container {
@@ -56,14 +57,14 @@ export default {
   }
   &__money {
     width: 200px;
-    &__flex {
+    &_flex {
       display: flex;
     }
   }
-  &--mt-30 {
+  &_mt {
     margin-top: 30px;
   }
-  &--gap {
+  &_gap {
     gap: 30px;
     @media (max-width: 600px) {
       gap: 10px;
