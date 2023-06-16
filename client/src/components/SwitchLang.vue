@@ -1,6 +1,6 @@
 <template>
   <v-btn class="btn" color="main-blue" @click="switchLang">
-    <span class="btn_text-lg btn_flex btn_gap">
+    <span class="btn_text btn_flex btn_gap">
       <WorldIcon width="24" height="24" color="white" />
       {{ $i18n.locale }}
     </span>
@@ -28,7 +28,7 @@ export default {
   &_gap {
     gap: 5px;
   }
-  &_text-lg {
+  &_text {
     font-size: $xm;
   }
   &_flex {
@@ -37,7 +37,7 @@ export default {
   }
 }
 @media (max-width: 600px) {
-  .v-btn.v-btn--has-bg {
+  .v-btn {
     color: white;
   }
 }
